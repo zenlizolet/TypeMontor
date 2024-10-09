@@ -41,7 +41,7 @@ namespace TypeMontor
             label8 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             closeMenuItem = new ToolStripMenuItem();
-
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -95,9 +95,9 @@ namespace TypeMontor
             label5.ForeColor = Color.DarkGray;
             label5.Location = new Point(208, 28);
             label5.Name = "label5";
-            label5.Size = new Size(40, 17);
+            label5.Size = new Size(16, 17);
             label5.TabIndex = 4;
-            label5.Text = "prev";
+            label5.Text = "0";
             // 
             // label6
             // 
@@ -106,9 +106,9 @@ namespace TypeMontor
             label6.ForeColor = Color.DarkGray;
             label6.Location = new Point(12, 28);
             label6.Name = "label6";
-            label6.Size = new Size(40, 17);
+            label6.Size = new Size(32, 17);
             label6.TabIndex = 5;
-            label6.Text = "prev";
+            label6.Text = "0.0";
             // 
             // label7
             // 
@@ -117,9 +117,9 @@ namespace TypeMontor
             label7.ForeColor = Color.DarkGray;
             label7.Location = new Point(71, 28);
             label7.Name = "label7";
-            label7.Size = new Size(40, 17);
+            label7.Size = new Size(32, 17);
             label7.TabIndex = 6;
-            label7.Text = "prev";
+            label7.Text = "0.0";
             // 
             // label8
             // 
@@ -128,22 +128,22 @@ namespace TypeMontor
             label8.ForeColor = Color.DarkGray;
             label8.Location = new Point(117, 28);
             label8.Name = "label8";
-            label8.Size = new Size(40, 17);
+            label8.Size = new Size(32, 17);
             label8.TabIndex = 7;
-            label8.Text = "prev";
+            label8.Text = "0.0";
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { closeMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(153, 48);
+            contextMenuStrip1.Size = new Size(104, 26);
             // 
             // closeMenuItem
             // 
             closeMenuItem.Name = "closeMenuItem";
-            closeMenuItem.Size = new Size(152, 22);
+            closeMenuItem.Size = new Size(103, 22);
             closeMenuItem.Text = "Close";
-            closeMenuItem.Click += new EventHandler(CloseMenuItem_Click);
+            closeMenuItem.Click += CloseMenuItem_Click;
             // 
             // TypeMontor
             // 
@@ -152,6 +152,7 @@ namespace TypeMontor
             BackColor = Color.FromArgb(25, 25, 25);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(260, 54);
+            ContextMenuStrip = contextMenuStrip1;
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -170,14 +171,13 @@ namespace TypeMontor
             Name = "TypeMontor";
             Opacity = 0.9D;
             StartPosition = FormStartPosition.Manual;
-            Text = "Form";
+            Text = "0.00";
             TopMost = true;
             TransparencyKey = Color.White;
-            ContextMenuStrip = contextMenuStrip1; // Attach the context menu to the form
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
-
 
         private void CloseMenuItem_Click(object sender, EventArgs e)
         {
